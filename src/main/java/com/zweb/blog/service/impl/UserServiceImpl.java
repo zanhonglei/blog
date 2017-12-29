@@ -2,10 +2,12 @@ package com.zweb.blog.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.zweb.blog.dao.UserMapper;
+import com.zweb.blog.datasource.DataSource;
 import com.zweb.blog.entity.User;
 import com.zweb.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class UserServiceImpl implements UserService {
     * pageNum 开始页数
     * pageSize 每页显示的数据条数
     * */
+    @DataSource("helloword")
     @Override
     public List<User> findAllUser(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。

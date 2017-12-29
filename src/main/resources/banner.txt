@@ -1,3 +1,5 @@
+${AnsiColor.BRIGHT_BLUE}
+::: Project (version:${application.version}) :::                  Spring-Boot ${spring-boot.version}
 ${AnsiColor.RED}
         ███████╗   ██╗            ██╗     ███████╗    ██████╗
         ╚══███╔╝   ██║            ██║     ██╔════╝    ██╔══██╗
@@ -5,6 +7,5 @@ ${AnsiColor.RED}
           ███╔╝       ██║  ███╗  ██║     ██╔══╝        ██╔══██╗
         ███████╗     ╚███╔███╔╝       ███████╗    ██████╔╝
         ╚══════╝       ╚══╝╚══╝          ╚══════╝   ╚═════╝
-
-${AnsiColor.BRIGHT_BLUE}
-::: Project (version:${application.version}) :::                        Spring-Boot ${spring-boot.version}
+${AnsiColor.BRIGHT_MAGENTA}
+::: 开人员名单：                            昝红磊
