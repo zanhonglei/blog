@@ -5,7 +5,7 @@ spring:
 
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/depot
+        url: jdbc:mysql://localhost:3306/blog
         username: root
         password: root
         # 使用druid数据源
