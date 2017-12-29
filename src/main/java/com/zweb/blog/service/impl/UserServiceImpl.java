@@ -1,8 +1,8 @@
 package com.zweb.blog.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.zweb.blog.dao.UserMapper;
 import com.zweb.blog.entity.User;
-import com.zweb.blog.mapper.UserMapper;
 import com.zweb.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
