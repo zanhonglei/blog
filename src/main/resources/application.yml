@@ -57,7 +57,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.zweb.entity
+  type-aliases-package: com.zweb.blog.entity
 
 #pagehelper分页插件
 pagehelper:
