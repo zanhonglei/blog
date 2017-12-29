@@ -57,6 +57,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
+#  指定domain类的基包，即指定其在*Mapper.xml文件中可以使用简名来代替全类名
   type-aliases-package: com.zweb.blog.entity
 
 #pagehelper分页插件
