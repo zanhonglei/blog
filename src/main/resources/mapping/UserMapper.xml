@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="main.java.com.zweb.blog.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="main.java.com.zweb.blog.entity.User" >
+<mapper namespace="com.zweb.blog.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.zweb.blog.entity.User" >
     <id column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from t_user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="main.java.com.zweb.blog.entity.User" >
+  <insert id="insert" parameterType="com.zweb.blog.entity.User" >
     insert into t_user (user_id, user_name, password, 
       phone)
     values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="main.java.com.zweb.blog.entity.User" >
+  <insert id="insertSelective" parameterType="com.zweb.blog.entity.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="main.java.com.zweb.blog.entity.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zweb.blog.entity.User" >
     update t_user
     <set >
       <if test="userName != null" >
@@ -72,7 +72,7 @@
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="main.java.com.zweb.blog.entity.User" >
+  <update id="updateByPrimaryKey" parameterType="com.zweb.blog.entity.User" >
     update t_user
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
