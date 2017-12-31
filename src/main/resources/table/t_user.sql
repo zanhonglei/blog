@@ -1,6 +1,32 @@
-CREATE TABLE t_user(
-  user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  user_name VARCHAR(255) NOT NULL ,
-  password VARCHAR(255) NOT NULL ,
-  phone VARCHAR(255) NOT NULL
-) ENGINE=INNODB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
+/*
+ Navicat MySQL Data Transfer
+
+ Source Server         : msyql
+ Source Server Type    : MySQL
+ Source Server Version : 50720
+ Source Host           : localhost
+ Source Database       : blog
+
+ Target Server Type    : MySQL
+ Target Server Version : 50720
+ File Encoding         : utf-8
+
+ Date: 12/31/2017 12:22:07 PM
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `t_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+SET FOREIGN_KEY_CHECKS = 1;

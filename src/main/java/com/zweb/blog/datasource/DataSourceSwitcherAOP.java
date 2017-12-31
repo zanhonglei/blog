@@ -2,11 +2,8 @@ package com.zweb.blog.datasource;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
@@ -15,7 +12,7 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 public class DataSourceSwitcherAOP {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(this.getClass());
 
     @Pointcut("execution(* com.zweb.blog.service.*Service.*(..))")
     public void scan() {
@@ -28,6 +25,7 @@ public class DataSourceSwitcherAOP {
             DataSource dataSource = method.getAnnotation(DataSource.class);
             if(dataSource!=null)
                 logger.info(dataSource.value());
+            //TODO
         }
     }
 
