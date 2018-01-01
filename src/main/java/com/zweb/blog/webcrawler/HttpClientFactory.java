@@ -1,4 +1,4 @@
-package com.zweb.blog.httpclient;
+package com.zweb.blog.webcrawler;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
@@ -9,20 +9,21 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class HttpClientFactory {
     private static Logger logger = Logger.getLogger(HttpClientFactory.class);
     private static CloseableHttpClient httpclient = HttpClients.createDefault();
 
     /**
-     *
-     * @param uri
+     * 通过Get请求，返回该网页的html代码
+     * @param uri 请求的地址
      * @return map:
+     *              uri:请求的地址
+     *              status：http状态码
+     *              content：返回的html代码
      */
     public static Map get(String uri){
         HashMap<String, Object> map = new HashMap<String,Object>();
@@ -40,7 +41,7 @@ public class HttpClientFactory {
                 map.put("status",response.getStatusLine());
                 if (entity != null) {
                     // 打印响应内容长度
-                    System.out.println("Response content length: " + entity.getContentLength());
+                    logger.info("Response content length: " + entity.getContentLength());
                     // 打印响应内容
                     String content = EntityUtils.toString(entity);
                     logger.info("Response content: " + content);
@@ -62,16 +63,5 @@ public class HttpClientFactory {
             }
         }
         return map;
-    }
-
-    public static void main(String[] args) {
-        Map<String,Object> map = HttpClientFactory.get("http://blog.csdn.net/z3881006/article/details/78936887");
-        String content;
-        if ("200".endsWith(map.get("status").toString())) {
-            content = map.get("content").toString();
-        }
-        //Pattern pattern = new Pattern();
-
-        //<div class="markdown_views"></div>
     }
 }
