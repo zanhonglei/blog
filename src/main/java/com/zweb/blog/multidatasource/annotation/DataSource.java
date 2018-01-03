@@ -1,4 +1,6 @@
-package com.zweb.blog.datasource;
+package com.zweb.blog.multidatasource.annotation;
+
+import com.zweb.blog.multidatasource.core.DataSourceEnum;
 
 import java.lang.annotation.*;
 
@@ -7,5 +9,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD})
 public @interface DataSource {
-    String value() default "masterDataSource";
+    DataSourceEnum value() default DataSourceEnum.master;
 }

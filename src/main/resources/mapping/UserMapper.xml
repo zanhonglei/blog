@@ -11,7 +11,7 @@
     user_id, user_name, password, phone
   </sql>
   <select id="selectAllUser" resultMap="BaseResultMap">
-    SELECT * FROM t_user;
+    SELECT <include refid="Base_Column_List"/> FROM t_user
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
